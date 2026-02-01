@@ -1,0 +1,54 @@
+name: "Agent Task"
+description: "A well-scoped task intended for autonomous implementation"
+title: "[task]: "
+labels: ["agent", "task"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What is wrong / missing? Include context and impact.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope constraints
+      description: What must NOT change? (APIs, behavior, files, perf, etc.)
+      value: |
+        - Do not change public APIs unless explicitly stated
+        - Keep PR small and scoped
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria (checklist)
+      description: Define what "done" means in objective terms.
+      value: |
+        - [ ] Criteria 1
+        - [ ] Criteria 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification commands (must pass)
+      value: |
+        uv sync --dev --frozen
+        uv run ruff check .
+        uv run mypy .
+        uv run pytest
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes / links
+      description: Links to docs, related code, prior PRs, screenshots, logs.
+    validations:
+      required: false
