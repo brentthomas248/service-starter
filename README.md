@@ -7,3 +7,7 @@ Template repository for agent-ready Python services (uv, pytest, GitHub Actions)
 uv sync --dev --frozen
 uv run pytest
 ```
+
+## Development
+
+See [docs/agent-runbook.md](docs/agent-runbook.md) for verification commands.
